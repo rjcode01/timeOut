@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select2 with Select All/Deselect All</title>
+    <style>
+      #countdowntimer {
+        margin-top: 100px;
+        text-align: center;
+        color: blue;
+        font-family: "Times New Roman", Times, serif;
+        font-size: xx-large;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="countdowntimer">
+      <span id="remaingingTime"></span> <span style="color: red">9 PM</span>
+    </div>
+    <script>
+      setInterval(() => {
+        var date = new Date();
+        var hours = 20 - date.getHours();
+        var minutes = 59 - date.getMinutes();
+        var seconds = 60 - date.getSeconds();
+        var remaingingTime =
+          hours +
+          " Hours " +
+          minutes +
+          " Minutes " +
+          seconds +
+          " Seconds remainging to ";
+
+        var ele = document.getElementById("remaingingTime");
+        //ele.innerText = remaingingTime;
+        if (hours !== -1) ele.innerText = remaingingTime;
+        else ele.innerText = "bdshk bhaag jaldi ";
+      });
+    </script>
+  </body>
+</html>
